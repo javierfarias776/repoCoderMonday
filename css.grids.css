@@ -1,0 +1,289 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    display: grid;
+    background: white;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.botonera.desktop{
+    background-color: orange;
+    position: sticky;
+    top: 0;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.botonera.mobile {
+    display: none;
+}
+  .botonera ol{
+      display: grid;
+      grid-template-rows: repeat(5, 1fr);
+ 
+  }
+
+    .botonera ol li{
+      list-style: none;
+      margin-right: 20px;
+  }
+    
+      .botonera ol li a{
+          display: inline-block;
+          font-size: 1,8rem;
+          text-decoration: none;
+          color: white;
+      }
+
+         .botonera ol li a:hover{
+             color: black;
+             font-weight: 600;
+         }
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 10px;
+
+    grid-template-areas: "header"
+                         "contenido"
+                         "footer" ;
+}
+
+.contenido {
+    display: grid;
+    grid-gap: 10px;
+
+}
+.contenido.inicio {    
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "section section section section sidebar sidebar"
+                         "widget-1 widget-1 widget-2 widget-2 sidebar sidebar" ;
+}
+.contenido.subs {    
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "section section section section section"
+                         "form form form form"
+                         "footer footer footer footer" ;
+}
+.contenido.promo {    
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "section section section section sidebar sidebar"
+                         "widget-1 widget-1 widget-2 widget-2 sidebar sidebar" ;
+}
+
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor.contenido__1,
+.contenedor .contenido__2
+.contenedor .widget-1,
+.contenedor .sidebar,
+.contenedor.widget-2{
+    background: white;
+    padding: 20px;
+    border-radius: 4px; 
+}
+
+.contenedor .header{
+    background:orange;
+    color: white;    
+
+
+}
+
+.contenido__1{
+    grid-area: contenido__1;
+}
+
+.contenido.inicio .section {
+    grid-area: section;
+}
+.contenido.inicio .sidebar{
+    grid-column: 3/4;
+
+    background: black;
+    color: white;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100px;
+    grid-area: sidebar;
+}
+.contenido.inicio .widget-1,
+.contenido.inicio .widget-2{
+    background: orange;
+    color: white;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.contenido.inicio .widget-1{
+    grid-area: widget-1;
+}
+.contenido.inicio .widget-2{
+     grid-area: widget-2;
+}
+
+.footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    grid-area: footer;
+}
+
+/*propiedades del menu*/
+
+nav ol li a{
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+     
+}
+ol{
+    list-style: none;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    display: inline-block;
+    width: 20%;
+    font-size: 1rem;
+
+}
+ol ol{
+
+    position: absolute;
+    display: none;
+}
+ol li:hover ul {
+    display: block;
+
+}   
+
+ol ol li{
+    display: block;
+}
+
+
+
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+a:hover{
+    color: black;
+}
+
+/*propiedades de promocion*/
+
+
+.tabla {
+    width: 33%;
+    height: 550px;
+    margin: auto;
+    border:1px solid black;
+    border-radius: 4px;
+    padding: 60px;
+    text-align: center;
+    flex-grow: 1;
+    color: black;
+}
+.tabla > h2{
+    display: inline-block;
+    margin-bottom: 35px;
+
+
+}
+
+.tabla img{
+    width: 64px;
+    margin-bottom: 35px;
+}
+
+.tabla > h3{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.tabla > p{
+    display: block;
+    margin-bottom: 20px;
+}
+ .bottom{
+    display: inline-block;
+    width: 150px;
+    padding: 12px;
+    background: orange;
+    text-decoration: none;
+    color: white;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin: auto;
+}
+.tabla:hover{
+    background: black;
+    color: orange;
+    transition: 1s all;
+    transform:scale(1.1);
+    cursor: pointer;
+
+}
+
+
+/*full responsive*/
+@media screen and (max-width:768px) {
+
+    .botonera.desktop {
+        display: none;
+    }
+    .botonera.mobile {
+        display: flex;
+    }
+    .botonera.mobile ol {
+        position: absolute;
+        display: none;
+        grid-template-columns: auto;
+        background-color: orange;
+        top: 100px;
+    }
+    .botonera.mobile ol:hover {
+        display: grid;
+    }
+    .botonera.mobile ol li {
+        width: 100%;
+    }
+    .botonera.mobile ol li a {
+        text-align: left;
+        justify-content: flex-start;
+        font-size: 19px;
+    }
+    
+    
+    .contenido.inicio {
+        justify-content: center;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "section section section section"
+        "sidebar sidebar sidebar sidebar"
+        "widget-1 widget-1 widget-2 widget-2"
+    }
+}
